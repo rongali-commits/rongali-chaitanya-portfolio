@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, internalProjects } from "../data";
+import { ProjectLiveDemo } from "./ProjectLiveDemo";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -100,11 +101,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="eyebrow">Visible demo</p>
           <h2>What a client would see and understand.</h2>
           <p>
-            This is a portfolio demo surface showing the workflow, screens, and
-            business logic that would be adapted for a real client project.
+            This is a live portfolio demo. You can click, type, filter, and run
+            sample workflows directly in the browser.
           </p>
         </div>
-        <DemoSurface slug={project.slug} />
+        <ProjectLiveDemo slug={project.slug} />
       </section>
 
       <section className="section project-build">
@@ -166,174 +167,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
     </main>
-  );
-}
-
-function DemoSurface({ slug }: { slug: string }) {
-  if (slug === "ai-support-chatbot") {
-    return (
-      <div className="demo-frame demo-chat">
-        <div className="demo-sidebar">
-          <span>Knowledge base</span>
-          <strong>Service FAQ, pricing PDF, return policy, contact page</strong>
-          <ul>
-            <li>92 approved answers</li>
-            <li>14 lead questions</li>
-            <li>4 source documents</li>
-          </ul>
-        </div>
-        <div className="chat-window">
-          <div className="chat-message bot">Hi, I can help with pricing, availability, and booking.</div>
-          <div className="chat-message user">Do you provide same-day service?</div>
-          <div className="chat-message bot">
-            Yes. Same-day slots are available before 3 PM. I can collect your
-            location and preferred time.
-          </div>
-          <div className="lead-card">
-            <span>Lead captured</span>
-            <strong>Asha R. / Hyderabad / same-day enquiry</strong>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (slug === "invoice-report-automation") {
-    return (
-      <div className="demo-frame demo-invoice">
-        <div className="automation-steps">
-          {["Upload sales.csv", "Validate 1,248 rows", "Generate PDF", "Email summary"].map(
-            (step) => (
-              <div key={step}>
-                <span>Done</span>
-                <strong>{step}</strong>
-              </div>
-            ),
-          )}
-        </div>
-        <div className="invoice-paper">
-          <div>
-            <span>Invoice report</span>
-            <strong>July Operations</strong>
-          </div>
-          <dl>
-            <div>
-              <dt>Clean rows</dt>
-              <dd>1,248</dd>
-            </div>
-            <div>
-              <dt>Errors fixed</dt>
-              <dd>37</dd>
-            </div>
-            <div>
-              <dt>Total billed</dt>
-              <dd>$18,420</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    );
-  }
-
-  if (slug === "lead-intelligence-dashboard") {
-    return (
-      <div className="demo-frame demo-leads">
-        <div className="lead-kpis">
-          <div>
-            <span>Collected</span>
-            <strong>486</strong>
-          </div>
-          <div>
-            <span>Duplicates removed</span>
-            <strong>61</strong>
-          </div>
-          <div>
-            <span>Ready to export</span>
-            <strong>425</strong>
-          </div>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Fit</th>
-              <th>Source</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Nova Clinics</td>
-              <td>92</td>
-              <td>Maps</td>
-              <td>Qualified</td>
-            </tr>
-            <tr>
-              <td>Peak Realty</td>
-              <td>88</td>
-              <td>Directory</td>
-              <td>Qualified</td>
-            </tr>
-            <tr>
-              <td>Urban Tutors</td>
-              <td>81</td>
-              <td>Search</td>
-              <td>Review</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-
-  if (slug === "document-resume-analyzer") {
-    return (
-      <div className="demo-frame demo-docs">
-        <div className="candidate-score">
-          <span>Top match</span>
-          <strong>Priya S. / Automation Analyst / 94%</strong>
-          <p>Python, Excel automation, API integrations, dashboard reporting.</p>
-        </div>
-        <div className="score-table">
-          {[
-            ["Python", "Strong"],
-            ["Automation", "Strong"],
-            ["Communication", "Good"],
-            ["Availability", "Immediate"],
-          ].map(([field, value]) => (
-            <div key={field}>
-              <span>{field}</span>
-              <strong>{value}</strong>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="demo-frame demo-content">
-      <div className="source-box">
-        <span>Source input</span>
-        <p>
-          Paste one long article, transcript, idea note, or client brief. Choose
-          the formats you want to generate.
-        </p>
-      </div>
-      <div className="output-stack">
-        <article>
-          <span>LinkedIn post</span>
-          <strong>3 short hooks and one polished draft</strong>
-        </article>
-        <article>
-          <span>Email newsletter</span>
-          <strong>Subject line, intro, body, CTA</strong>
-        </article>
-        <article>
-          <span>Idea bank</span>
-          <strong>10 follow-up post angles</strong>
-        </article>
-      </div>
-    </div>
   );
 }
