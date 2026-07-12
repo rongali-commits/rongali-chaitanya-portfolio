@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { projectShowcases } from "./projects/data";
+import { internalProjects } from "./projects/data";
 
 const services = [
   {
@@ -22,10 +22,34 @@ const services = [
   },
 ];
 
+const engagements = [
+  {
+    title: "Automation Sprint",
+    timeline: "3-7 days",
+    description:
+      "Turn one repetitive spreadsheet, file, report, or scraping workflow into a reliable Python automation.",
+    includes: ["Workflow map", "Working script or tool", "Simple handover notes"],
+  },
+  {
+    title: "AI Assistant Build",
+    timeline: "1-2 weeks",
+    description:
+      "Build a practical AI assistant for support, documents, lead capture, or internal knowledge search.",
+    includes: ["Knowledge setup", "Chat or dashboard UI", "Prompt and source logic"],
+  },
+  {
+    title: "Web Tool / Dashboard",
+    timeline: "1-3 weeks",
+    description:
+      "Launch a focused web app for a business workflow, with clean UI and deployment-ready structure.",
+    includes: ["Next.js or FastAPI build", "Forms and exports", "Vercel/GitHub deployment"],
+  },
+];
+
 const stats = [
   ["5+", "years in IT and practical software work"],
-  ["3", "core services: AI, automation, web"],
-  ["6", "client-ready project systems"],
+  ["5", "live mini-app project demos"],
+  ["3", "focused ways to hire me"],
   ["1", "independent publishing project"],
 ];
 
@@ -83,6 +107,7 @@ export default function Home() {
         <div className="nav-links">
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
+          <a href="#engagements">Hire</a>
           <a href="#about">About</a>
           <a href="#noerong">Noerong</a>
           <a href="#contact">Contact</a>
@@ -91,28 +116,34 @@ export default function Home() {
 
       <section className="hero section" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">AI Integration / Python Automation / Web Development</p>
-          <h1>Practical AI and automation systems for businesses.</h1>
+          <p className="eyebrow">AI integration / Python automation / web tools</p>
+          <h1>I turn manual business work into useful software.</h1>
           <p className="hero-text">
             I am Rongali Chaitanya, an IT professional with 5 years of
-            experience building useful software around real workflows. I help
-            teams automate repetitive work, integrate AI into their operations,
-            and launch clean web tools that are easy to use.
+            experience building around real workflows. I help founders,
+            agencies, and small teams automate repetitive tasks, add practical
+            AI features, and launch clean web tools that people can actually
+            use.
           </p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="button primary" href="mailto:hello@rongalichaitanya.com">
-              Email hello@rongalichaitanya.com
+              Start a project
             </a>
             <a className="button secondary" href="#projects">
-              View project systems
+              Launch live demos
             </a>
+          </div>
+          <div className="proof-row" aria-label="Portfolio proof points">
+            <span>Live demos on this site</span>
+            <span>GitHub + Vercel delivery</span>
+            <span>Fast handover-focused builds</span>
           </div>
         </div>
 
         <aside className="hero-visual" aria-label="Professional highlights">
           <div className="visual-topline">
             <span className="signal" aria-hidden="true" />
-            <span>Available for freelance work</span>
+            <span>Available for focused freelance builds</span>
           </div>
           <div className="visual-flow">
             <div>
@@ -142,7 +173,7 @@ export default function Home() {
       <section className="section services" id="services">
         <div className="section-heading">
           <p className="eyebrow">Services</p>
-          <h2>Focused services for small teams, founders, and agencies.</h2>
+          <h2>Work I can be hired for immediately.</h2>
           <p>
             I work best on projects where a business process can be made faster,
             clearer, or more reliable with the right combination of AI, Python,
@@ -161,6 +192,27 @@ export default function Home() {
               </ul>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section fit-section">
+        <div className="fit-panel">
+          <p className="eyebrow">Best fit</p>
+          <h2>You should talk to me if your team is still doing this manually.</h2>
+        </div>
+        <div className="fit-list">
+          <article>
+            <strong>Spreadsheets that keep coming back</strong>
+            <p>Reports, invoices, CSV cleanup, and recurring operations work.</p>
+          </article>
+          <article>
+            <strong>Customer questions that repeat</strong>
+            <p>FAQs, document search, lead qualification, and support triage.</p>
+          </article>
+          <article>
+            <strong>Data scattered across websites or tools</strong>
+            <p>Public lead collection, API integrations, and dashboard views.</p>
+          </article>
         </div>
       </section>
 
@@ -202,14 +254,15 @@ export default function Home() {
       <section className="section projects" id="projects">
         <div className="section-heading">
           <p className="eyebrow">Project systems</p>
-          <h2>Live mini-apps clients can open and try.</h2>
+          <h2>Live mini-apps you can open and try.</h2>
           <p>
             These are not screenshots or static mockups. Each project opens as
-            its own live product-style page with a working browser demo.
+            its own live product-style page with a working browser demo and
+            sample business data.
           </p>
         </div>
         <div className="project-grid">
-          {projectShowcases.map((project) => (
+          {internalProjects.map((project) => (
             <a
               className="project-card"
               href={project.href}
@@ -239,6 +292,34 @@ export default function Home() {
                 {project.external ? "Open live website" : "Launch live app"}
               </span>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section engagements" id="engagements">
+        <div className="section-heading">
+          <p className="eyebrow">Ways to hire me</p>
+          <h2>Clear project shapes, not vague development hours.</h2>
+          <p>
+            Most good freelance projects start with one painful workflow. These
+            are the three simplest ways to turn that workflow into something
+            usable.
+          </p>
+        </div>
+        <div className="engagement-grid">
+          {engagements.map((engagement) => (
+            <article className="engagement-card" key={engagement.title}>
+              <div>
+                <p className="project-label">{engagement.timeline}</p>
+                <h3>{engagement.title}</h3>
+                <p>{engagement.description}</p>
+              </div>
+              <ul>
+                {engagement.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>
@@ -285,12 +366,17 @@ export default function Home() {
       <section className="section contact" id="contact">
         <div>
           <p className="eyebrow">Start a project</p>
-          <h2>Have a workflow that should not be manual anymore?</h2>
+          <h2>Tell me the task you want off your plate.</h2>
           <p>
             Send me the task, the data source, and the result you want. I can
             help turn it into an automation, AI assistant, dashboard, scraper,
             report system, or lightweight web app.
           </p>
+          <ul className="contact-notes" aria-label="Helpful details to include">
+            <li>What you do manually today</li>
+            <li>Sample file, website, or data source</li>
+            <li>Ideal outcome and timeline</li>
+          </ul>
         </div>
         <div className="contact-actions">
           <a className="button primary" href="mailto:hello@rongalichaitanya.com">
@@ -301,6 +387,17 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <footer className="site-footer">
+        <span>Rongali Chaitanya</span>
+        <a href="mailto:hello@rongalichaitanya.com">Email</a>
+        <a href="https://github.com/rongali-commits" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a href="https://noerong.com" target="_blank" rel="noreferrer">
+          Noerong
+        </a>
+      </footer>
     </main>
   );
 }
