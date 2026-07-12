@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { projectShowcases } from "./projects/data";
 
 const services = [
   {
@@ -18,93 +19,6 @@ const services = [
     description:
       "Professional landing pages, dashboards, internal tools, forms, and lightweight full-stack apps built for practical use and quick deployment.",
     points: ["Next.js", "React", "FastAPI", "Vercel"],
-  },
-];
-
-const projects = [
-  {
-    title: "AI Customer Support & Lead Assistant",
-    label: "AI integration",
-    summary:
-      "A website assistant that answers questions from FAQs, documents, and service pages while collecting visitor details for follow-up.",
-    stack: "OpenAI API, embeddings, RAG, FastAPI, React",
-    deliverables: [
-      "Knowledge-base ingestion for FAQs, PDFs, and website content",
-      "Lead capture flow with email-ready customer summaries",
-      "Source-aware answers and simple admin update process",
-    ],
-    outcome:
-      "Ideal for service businesses that want fewer repeated replies and better qualified website enquiries.",
-  },
-  {
-    title: "Automated Invoice & Report System",
-    label: "Python automation",
-    summary:
-      "A repeatable workflow that turns raw Excel or CSV files into clean reports, invoice PDFs, and email-ready summaries.",
-    stack: "Python, Pandas, OpenPyXL, PDF generation, email APIs",
-    deliverables: [
-      "CSV and Excel cleanup with validation rules",
-      "PDF invoice or report generation",
-      "Export, email, and audit-friendly output folders",
-    ],
-    outcome:
-      "Built for teams spending hours every week on spreadsheet formatting, reconciliation, and recurring reports.",
-  },
-  {
-    title: "Lead Intelligence Scraper Dashboard",
-    label: "Data workflow",
-    summary:
-      "A web dashboard for collecting public business data, removing duplicates, cleaning records, and exporting qualified leads.",
-    stack: "Python, Playwright, BeautifulSoup, Google Sheets API",
-    deliverables: [
-      "Public data extraction with responsible rate limits",
-      "Duplicate detection and field normalization",
-      "CSV and Google Sheets export for sales teams",
-    ],
-    outcome:
-      "Useful for agencies, recruiters, real estate teams, and small sales teams that need cleaner prospect lists.",
-  },
-  {
-    title: "Document Intelligence & Resume Analyzer",
-    label: "AI workflow",
-    summary:
-      "An AI-powered review tool that extracts key details from PDFs, resumes, and documents, then summarizes or ranks them against custom criteria.",
-    stack: "Python, PDF parsing, OpenAI API, structured outputs",
-    deliverables: [
-      "Document upload and text extraction pipeline",
-      "Custom scoring, tagging, and summary logic",
-      "Structured CSV, JSON, or dashboard output",
-    ],
-    outcome:
-      "Designed for recruiters, admins, and operations teams that need to review large batches of documents faster.",
-  },
-  {
-    title: "AI Content Repurposing Workspace",
-    label: "Creator tooling",
-    summary:
-      "A tool that turns long-form notes, articles, or transcripts into platform-ready posts, summaries, email drafts, and idea banks.",
-    stack: "Next.js, OpenAI API, prompt workflows, local storage",
-    deliverables: [
-      "Input workspace for transcript, blog, or notes",
-      "Reusable prompt templates for different content formats",
-      "Editable outputs for LinkedIn, email, short posts, and summaries",
-    ],
-    outcome:
-      "Built for coaches, creators, agencies, and founders who want to publish more from one strong source asset.",
-  },
-  {
-    title: "Noerong Publishing Website",
-    label: "Passion project",
-    summary:
-      "An independent publication for essays on history, science, philosophy, geopolitics, and the hidden forces shaping ordinary life.",
-    stack: "Editorial strategy, web publishing, research workflow, design",
-    deliverables: [
-      "Essay-led publishing system and topic structure",
-      "Readable editorial experience for long-form thinking",
-      "Brand voice around curiosity, research, and intellectual exploration",
-    ],
-    outcome:
-      "Shows the research-driven side of my work: patient thinking, clear writing, and the habit of turning broad questions into useful structure.",
   },
 ];
 
@@ -295,8 +209,14 @@ export default function Home() {
           </p>
         </div>
         <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
+          {projectShowcases.map((project) => (
+            <a
+              className="project-card"
+              href={project.href}
+              key={project.title}
+              rel={project.external ? "noreferrer" : undefined}
+              target={project.external ? "_blank" : undefined}
+            >
               <p className="project-label">{project.label}</p>
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
@@ -315,7 +235,10 @@ export default function Home() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
+              <span className="project-cta">
+                {project.external ? "Open live website" : "Open project demo"}
+              </span>
+            </a>
           ))}
         </div>
       </section>
