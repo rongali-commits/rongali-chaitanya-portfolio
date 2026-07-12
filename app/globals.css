@@ -1141,6 +1141,267 @@ li {
   border-top: 1px solid var(--ink);
 }
 
+.solo-site {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(15, 118, 110, 0.16), transparent 24rem),
+    radial-gradient(circle at 94% 4%, rgba(217, 87, 63, 0.12), transparent 24rem),
+    #f7f8f4;
+}
+
+.solo-ai-support-chatbot {
+  --app-accent: #0f766e;
+}
+
+.solo-invoice-report-automation {
+  --app-accent: #244c8f;
+}
+
+.solo-lead-intelligence-dashboard {
+  --app-accent: #c69332;
+}
+
+.solo-document-resume-analyzer {
+  --app-accent: #6f4bb8;
+}
+
+.solo-ai-content-workspace {
+  --app-accent: #d9573f;
+}
+
+.solo-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  width: min(1400px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.85rem 0;
+  backdrop-filter: blur(18px);
+}
+
+.solo-product-name {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.solo-product-name span {
+  color: var(--app-accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.solo-product-name strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.solo-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.38fr) minmax(0, 1fr);
+  gap: 1rem;
+  width: min(1400px, calc(100% - 2rem));
+  min-height: calc(100vh - 4.8rem);
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+
+.solo-brief,
+.solo-app-shell,
+.solo-proof-grid article,
+.solo-workflow,
+.solo-footer-cta {
+  border: 1px solid rgba(18, 22, 21, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 1px 0 rgba(18, 22, 21, 0.04);
+}
+
+.solo-brief {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.4rem;
+}
+
+.solo-brief h1 {
+  max-width: 10ch;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+}
+
+.solo-brief p {
+  color: #394641;
+}
+
+.solo-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.solo-metrics span {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(18, 22, 21, 0.12);
+  background: var(--surface-soft);
+  color: #26302c;
+  font-size: 0.83rem;
+  font-weight: 900;
+}
+
+.solo-actions {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: auto;
+}
+
+.solo-actions .button {
+  width: 100%;
+}
+
+.solo-app-shell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--app-accent) 12%, transparent), transparent 42%),
+    #111816;
+}
+
+.solo-app-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.solo-app-toolbar span {
+  display: block;
+  color: #9fb3aa;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.solo-app-toolbar strong,
+.solo-app-toolbar em {
+  color: #fff;
+}
+
+.solo-app-toolbar em {
+  padding: 0.4rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.solo-app-shell .live-demo {
+  flex: 1;
+  min-height: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.solo-section {
+  width: min(1400px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.solo-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.solo-section-heading h2,
+.solo-workflow h2,
+.solo-footer-cta h2 {
+  max-width: 16ch;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.solo-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.solo-proof-grid article {
+  min-height: 16rem;
+  padding: 1.2rem;
+}
+
+.solo-proof-grid span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--app-accent);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.solo-workflow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.4rem;
+}
+
+.solo-workflow ol {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.solo-workflow li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  color: #33413b;
+  font-weight: 900;
+}
+
+.solo-workflow li span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--app-accent);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+}
+
+.solo-footer-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+}
+
+.solo-footer-cta p {
+  max-width: 48rem;
+  margin-bottom: 0;
+}
+
 @media (max-width: 980px) {
   .hero,
   .section-heading,
@@ -1154,8 +1415,22 @@ li {
   .demo-docs,
   .demo-content,
   .project-build,
+  .solo-nav,
+  .solo-hero,
+  .solo-section-heading,
+  .solo-proof-grid,
+  .solo-workflow,
+  .solo-footer-cta,
   .live-demo {
     grid-template-columns: 1fr;
+  }
+
+  .solo-hero {
+    min-height: auto;
+  }
+
+  .solo-nav {
+    align-items: start;
   }
 
   .hero {
@@ -1231,6 +1506,10 @@ li {
 
   .project-nav-links {
     max-width: 13rem;
+  }
+
+  .solo-product-name {
+    min-width: 0;
   }
 
   .lead-kpis,

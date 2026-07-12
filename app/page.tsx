@@ -202,10 +202,10 @@ export default function Home() {
       <section className="section projects" id="projects">
         <div className="section-heading">
           <p className="eyebrow">Project systems</p>
-          <h2>Complete portfolio projects ready to adapt for clients.</h2>
+          <h2>Live mini-apps clients can open and try.</h2>
           <p>
-            These are not random demos. Each one is shaped like a service that a
-            real business can understand, buy, and use.
+            These are not screenshots or static mockups. Each project opens as
+            its own live product-style page with a working browser demo.
           </p>
         </div>
         <div className="project-grid">
@@ -236,7 +236,7 @@ export default function Home() {
                 ))}
               </ul>
               <span className="project-cta">
-                {project.external ? "Open live website" : "Open project demo"}
+                {project.external ? "Open live website" : "Launch live app"}
               </span>
             </a>
           ))}

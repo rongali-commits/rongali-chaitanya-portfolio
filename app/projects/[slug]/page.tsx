@@ -27,8 +27,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} | Rongali Chaitanya`,
-    description: project.summary,
+    title: `${project.title} Live Demo | Rongali Chaitanya`,
+    description: `Try the live ${project.title} demo by Rongali Chaitanya.`,
   };
 }
 
@@ -41,130 +41,100 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="project-page">
-      <nav className="project-nav" aria-label="Project navigation">
+    <main className={`solo-site solo-${project.slug}`}>
+      <nav className="solo-nav" aria-label={`${project.title} navigation`}>
         <Link className="brand" href="/" aria-label="Back to Rongali Chaitanya home">
           RC
         </Link>
+        <div className="solo-product-name">
+          <span>{project.label}</span>
+          <strong>{project.title}</strong>
+        </div>
         <div className="project-nav-links">
-          <Link href="/">Portfolio</Link>
-          <Link href="/#projects">All projects</Link>
-          <a href="mailto:hello@rongalichaitanya.com">Contact</a>
+          <Link href="/#projects">All apps</Link>
+          <a href="mailto:hello@rongalichaitanya.com">Hire me</a>
         </div>
       </nav>
 
-      <section className="project-hero section">
-        <div>
-          <p className="eyebrow">{project.label}</p>
+      <section className="solo-hero">
+        <aside className="solo-brief">
+          <p className="eyebrow">Live product demo</p>
           <h1>{project.title}</h1>
-          <p className="hero-text">{project.summary}</p>
-          <div className="hero-actions">
-            <a className="button primary" href="#demo">
-              View demo
+          <p>{project.summary}</p>
+          <div className="solo-metrics">
+            {project.metrics?.map((metric) => <span key={metric}>{metric}</span>)}
+          </div>
+          <div className="solo-actions">
+            <a className="button primary" href="mailto:hello@rongalichaitanya.com">
+              Build this for me
             </a>
-            <a className="button secondary" href="mailto:hello@rongalichaitanya.com">
-              Build something similar
-            </a>
-          </div>
-        </div>
-
-        <aside className="project-summary-card" aria-label="Project summary">
-          <div>
-            <span>Stack</span>
-            <strong>{project.stack}</strong>
-          </div>
-          <div>
-            <span>Outcome</span>
-            <strong>{project.outcome}</strong>
-          </div>
-          <div className="metric-list">
-            {project.metrics?.map((metric) => <em key={metric}>{metric}</em>)}
+            <Link className="button secondary" href="/">
+              Portfolio
+            </Link>
           </div>
         </aside>
+
+        <section className="solo-app-shell" aria-label={`${project.title} live app`}>
+          <div className="solo-app-toolbar">
+            <div>
+              <span>Live app</span>
+              <strong>Interactive sample workflow</strong>
+            </div>
+            <em>Runs in browser</em>
+          </div>
+          <ProjectLiveDemo slug={project.slug} />
+        </section>
       </section>
 
-      <section className="section project-story">
-        <article>
-          <p className="eyebrow">Problem</p>
-          <h2>What this solves</h2>
-          <p>{project.challenge}</p>
-        </article>
-        <article>
-          <p className="eyebrow">Solution</p>
-          <h2>How I would build it</h2>
-          <p>{project.solution}</p>
-        </article>
-      </section>
-
-      <section className="section demo-section" id="demo">
-        <div className="section-heading">
-          <p className="eyebrow">Visible demo</p>
-          <h2>What a client would see and understand.</h2>
-          <p>
-            This is a live portfolio demo. You can click, type, filter, and run
-            sample workflows directly in the browser.
-          </p>
+      <section className="solo-section">
+        <div className="solo-section-heading">
+          <p className="eyebrow">What this app proves</p>
+          <h2>A complete client-ready workflow, packaged as a focused product.</h2>
         </div>
-        <ProjectLiveDemo slug={project.slug} />
-      </section>
-
-      <section className="section project-build">
-        <div className="deliverable-panel">
-          <p className="eyebrow">Deliverables</p>
-          <h2>What is included</h2>
-          <ul>
-            {project.deliverables.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="workflow-panel">
-          <p className="eyebrow">Workflow</p>
-          <h2>Build flow</h2>
-          <ol>
-            {project.workflow?.map((step, index) => (
-              <li key={step}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                {step}
-              </li>
-            ))}
-          </ol>
+        <div className="solo-proof-grid">
+          <article>
+            <span>Problem</span>
+            <p>{project.challenge}</p>
+          </article>
+          <article>
+            <span>Solution</span>
+            <p>{project.solution}</p>
+          </article>
+          <article>
+            <span>Stack</span>
+            <p>{project.stack}</p>
+          </article>
         </div>
       </section>
 
-      <section className="section project-features">
-        <p className="eyebrow">Feature set</p>
-        <h2>Designed to become a paid client solution.</h2>
-        <div className="feature-grid">
-          {project.features?.map((feature) => (
-            <article key={feature}>
-              <h3>{feature}</h3>
-              <p>
-                Built with a practical handover in mind: clear inputs,
-                repeatable outputs, and enough structure to extend later.
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section contact project-contact">
+      <section className="solo-section solo-workflow">
         <div>
-          <p className="eyebrow">Turn this into your project</p>
-          <h2>Need a similar system for a real workflow?</h2>
+          <p className="eyebrow">Workflow</p>
+          <h2>How the real client version would work.</h2>
+        </div>
+        <ol>
+          {project.workflow?.map((step, index) => (
+            <li key={step}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {step}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="solo-section solo-footer-cta">
+        <div>
+          <p className="eyebrow">Build a real version</p>
+          <h2>Want this connected to real data, AI APIs, or your business workflow?</h2>
           <p>
-            Send the task, files, website, or process you want automated. I can
-            scope a focused first version and build it into a usable tool.
+            This public demo uses safe sample data. A production version can be
+            connected to your documents, spreadsheet, website, CRM, email, or
+            OpenAI API workflow.
           </p>
         </div>
-        <div className="contact-actions">
-          <a className="button primary" href="mailto:hello@rongalichaitanya.com">
-            hello@rongalichaitanya.com
-          </a>
-          <Link className="button secondary" href="/#projects">
-            Back to projects
-          </Link>
-        </div>
+        <a className="button primary" href="mailto:hello@rongalichaitanya.com">
+          hello@rongalichaitanya.com
+        </a>
       </section>
     </main>
   );
