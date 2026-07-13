@@ -48,7 +48,7 @@ const engagements = [
 
 const stats = [
   ["5+", "years in IT and practical software work"],
-  ["5", "live mini-app project demos"],
+  ["5", "interactive product prototypes"],
   ["3", "focused ways to hire me"],
   ["1", "independent publishing project"],
 ];
@@ -92,21 +92,53 @@ const process = [
 ];
 
 export const metadata: Metadata = {
-  title: "Rongali Chaitanya | AI Integration, Python Automation & Web Development",
+  title: {
+    absolute: "Python Automation & AI Integration Developer | Rongali Chaitanya",
+  },
   description:
-    "Professional portfolio of Rongali Chaitanya, an IT professional with 5 years of experience building AI integrations, Python automations, and practical web tools.",
+    "I build Python automations, practical AI assistants, and focused web tools for agencies, founders, and operations teams.",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Rongali Chaitanya",
+    url: "https://www.rongalichaitanya.com",
+    description:
+      "Python automation and AI integration developer building practical business tools.",
+    jobTitle: "Python Automation & AI Integration Developer",
+    knowsAbout: [
+      "Python automation",
+      "FastAPI",
+      "AI integration",
+      "Retrieval-augmented generation",
+      "Next.js",
+      "Business workflow automation",
+    ],
+    sameAs: ["https://github.com/rongali-commits", "https://noerong.com"],
+  },
 };
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+      <main id="main-content">
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        type="application/ld+json"
+      />
       <nav className="site-nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="Rongali Chaitanya home">
           RC
         </a>
         <div className="nav-links">
-          <a href="#services">Services</a>
           <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
           <a href="#engagements">Hire</a>
           <a href="#about">About</a>
           <a href="#noerong">Noerong</a>
@@ -116,27 +148,26 @@ export default function Home() {
 
       <section className="hero section" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">AI integration / Python automation / web tools</p>
-          <h1>I turn manual business work into useful software.</h1>
+          <p className="eyebrow">Python automation / practical AI / web tools</p>
+          <h1>I automate reporting, document work, and repetitive operations.</h1>
           <p className="hero-text">
-            I am Rongali Chaitanya, an IT professional with 5 years of
-            experience building around real workflows. I help founders,
-            agencies, and small teams automate repetitive tasks, add practical
-            AI features, and launch clean web tools that people can actually
-            use.
+            I build Python automations, practical AI assistants, and focused
+            dashboards for agencies, founders, and operations teams. Every
+            engagement starts with a clear workflow and ends with working
+            software, deployment, and documented handover.
           </p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="button primary" href="mailto:hello@rongalichaitanya.com">
-              Start a project
+              Discuss a project
             </a>
             <a className="button secondary" href="#projects">
-              Launch live demos
+              View project prototypes
             </a>
           </div>
           <div className="proof-row" aria-label="Portfolio proof points">
-            <span>Live demos on this site</span>
-            <span>GitHub + Vercel delivery</span>
-            <span>Fast handover-focused builds</span>
+            <span>Interactive browser prototypes</span>
+            <span>GitHub + Vercel workflow</span>
+            <span>Clear, handover-focused delivery</span>
           </div>
         </div>
 
@@ -168,6 +199,59 @@ export default function Home() {
             ))}
           </div>
         </aside>
+      </section>
+
+      <section className="trust-strip" aria-label="Availability and working details">
+        <span>Based in India</span>
+        <span>UTC+5:30</span>
+        <span>Available for focused freelance builds</span>
+        <span>Replies within one business day</span>
+      </section>
+
+      <section className="section projects" id="projects">
+        <div className="section-heading">
+          <p className="eyebrow">Selected work</p>
+          <h2>Interactive workflows you can open and test.</h2>
+          <p>
+            Each page is a transparent browser prototype using safe sample
+            data. It demonstrates the workflow and interface; the production
+            blueprint shows how I would connect real Python, AI, APIs, and
+            business data.
+          </p>
+        </div>
+        <div className="project-grid">
+          {internalProjects.map((project) => (
+            <a
+              className="project-card"
+              href={project.href}
+              key={project.title}
+              rel={project.external ? "noreferrer" : undefined}
+              target={project.external ? "_blank" : undefined}
+            >
+              <p className="project-label">{project.label}</p>
+              <h3>{project.title}</h3>
+              <p>{project.summary}</p>
+              <div className="project-details">
+                <div>
+                  <span>Interactive demo</span>
+                  <strong>{project.demoStack}</strong>
+                </div>
+                <div>
+                  <span>Production blueprint</span>
+                  <strong>{project.stack}</strong>
+                </div>
+              </div>
+              <ul>
+                {project.deliverables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <span className="project-cta">
+                {project.external ? "Open live website" : "Open interactive prototype"}
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="section services" id="services">
@@ -247,51 +331,6 @@ export default function Home() {
         <div className="skill-cloud" aria-label="Skills">
           {skills.map((skill) => (
             <span key={skill}>{skill}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="section projects" id="projects">
-        <div className="section-heading">
-          <p className="eyebrow">Project systems</p>
-          <h2>Live mini-apps you can open and try.</h2>
-          <p>
-            These are not screenshots or static mockups. Each project opens as
-            its own live product-style page with a working browser demo and
-            sample business data.
-          </p>
-        </div>
-        <div className="project-grid">
-          {internalProjects.map((project) => (
-            <a
-              className="project-card"
-              href={project.href}
-              key={project.title}
-              rel={project.external ? "noreferrer" : undefined}
-              target={project.external ? "_blank" : undefined}
-            >
-              <p className="project-label">{project.label}</p>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <div className="project-details">
-                <div>
-                  <span>Stack</span>
-                  <strong>{project.stack}</strong>
-                </div>
-                <div>
-                  <span>Outcome</span>
-                  <strong>{project.outcome}</strong>
-                </div>
-              </div>
-              <ul>
-                {project.deliverables.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <span className="project-cta">
-                {project.external ? "Open live website" : "Launch live app"}
-              </span>
-            </a>
           ))}
         </div>
       </section>
@@ -382,14 +421,14 @@ export default function Home() {
           <a className="button primary" href="mailto:hello@rongalichaitanya.com">
             hello@rongalichaitanya.com
           </a>
-          <a className="button secondary" href="https://noerong.com" target="_blank" rel="noreferrer">
-            Read Noerong
+          <a className="button secondary" href="https://github.com/rongali-commits" target="_blank" rel="noreferrer">
+            Review GitHub
           </a>
         </div>
       </section>
 
       <footer className="site-footer">
-        <span>Rongali Chaitanya</span>
+        <span>© {new Date().getFullYear()} Rongali Chaitanya</span>
         <a href="mailto:hello@rongalichaitanya.com">Email</a>
         <a href="https://github.com/rongali-commits" target="_blank" rel="noreferrer">
           GitHub
@@ -398,6 +437,7 @@ export default function Home() {
           Noerong
         </a>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

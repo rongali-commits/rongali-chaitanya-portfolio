@@ -216,7 +216,7 @@ export function PortfolioAgent() {
   const [messages, setMessages] = useState<AgentMessage[]>(() => [
     createMessage({
       role: "agent",
-      text: "Hi, I am RC Agent. Ask me about Chaitanya, his projects, skills, Noerong, or what he can build for your workflow.",
+      text: "Hi, I am the RC Project Finder. Describe the task you want to improve and I will point you to the most relevant prototype or next step.",
       actions: [
         { label: "Recommend a project", prompt: "Which project matches my task?" },
         { label: "How to hire", prompt: "How do I hire Chaitanya?" },
@@ -257,23 +257,23 @@ export function PortfolioAgent() {
           onClick={() => setIsOpen(true)}
           type="button"
         >
-          <span>RC Agent</span>
-          <strong>Ask about projects</strong>
+          <span>Project Finder</span>
+          <strong>Match your workflow</strong>
         </button>
       )}
 
       {isOpen && (
         <section
-          aria-label="RC portfolio agent"
+          aria-label="RC project finder"
           className="agent-panel"
           id="portfolio-agent-panel"
         >
           <div className="agent-header">
             <div>
-              <span>RC Agent</span>
-              <strong>Portfolio guide</strong>
+              <span>Project Finder</span>
+              <strong>Portfolio workflow guide</strong>
             </div>
-            <button aria-label="Close RC Agent" onClick={() => setIsOpen(false)} type="button">
+            <button aria-label="Close project finder" onClick={() => setIsOpen(false)} type="button">
               Close
             </button>
           </div>
@@ -349,9 +349,9 @@ export function PortfolioAgent() {
             }}
           >
             <input
-              aria-label="Message RC Agent"
+              aria-label="Describe your workflow"
               onChange={(event) => setInput(event.target.value)}
-              placeholder="Ask about skills, demos, hiring, Noerong..."
+              placeholder="Describe a repetitive task or project..."
               value={input}
             />
             <button type="submit">Ask</button>

@@ -3,23 +3,36 @@ import { PortfolioAgent } from "./PortfolioAgent";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rongalichaitanya.com"),
-  title: "Rongali Chaitanya | AI Integration, Python Automation & Web Development",
+  metadataBase: new URL("https://www.rongalichaitanya.com"),
+  title: {
+    default: "Python Automation & AI Integration Developer | Rongali Chaitanya",
+    template: "%s | Rongali Chaitanya",
+  },
   description:
-    "IT professional with 5 years of experience building AI integrations, Python automations, web tools, dashboards, and practical business systems.",
+    "Python automation, practical AI integration, and focused web tools for agencies, founders, and operations teams.",
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Rongali Chaitanya", url: "/" }],
+  creator: "Rongali Chaitanya",
   openGraph: {
-    title: "Rongali Chaitanya | AI Integration, Python Automation & Web Development",
+    title: "Python Automation & AI Integration Developer | Rongali Chaitanya",
     description:
-      "Professional portfolio for AI integrations, Python automation, web development, and the Noerong publishing project.",
-    url: "https://rongalichaitanya.com",
+      "Practical Python automation, AI assistants, and focused web tools with clear scope and documented handover.",
+    url: "https://www.rongalichaitanya.com",
     siteName: "Rongali Chaitanya",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rongali Chaitanya | AI Integration, Python Automation & Web Development",
+    title: "Python Automation & AI Integration Developer | Rongali Chaitanya",
     description:
-      "IT professional with 5 years of experience building practical AI, automation, and web systems.",
+      "Practical Python automation, AI assistants, and focused web tools with clear scope and documented handover.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.svg",
