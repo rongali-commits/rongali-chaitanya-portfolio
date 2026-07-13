@@ -83,6 +83,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <Link className="button secondary" href="/">
               Portfolio
             </Link>
+            {project.repository && (
+              <a
+                className="button secondary"
+                href={project.repository}
+                rel="noreferrer"
+                target="_blank"
+              >
+                View source ↗
+              </a>
+            )}
           </div>
         </aside>
 

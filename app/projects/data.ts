@@ -8,6 +8,7 @@ export type ProjectShowcase = {
   deliverables: string[];
   outcome: string;
   href: string;
+  repository?: string;
   external?: boolean;
   challenge?: string;
   solution?: string;
@@ -33,6 +34,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Ideal for service businesses that want fewer repeated replies and better qualified website enquiries.",
     href: "/projects/ai-support-chatbot",
+    repository: "https://github.com/rongali-commits/support-lead-assistant",
     challenge:
       "Small businesses answer the same customer questions every day, but most visitors still leave before contacting the team.",
     solution:
@@ -62,6 +64,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Built for teams spending hours every week on spreadsheet formatting, reconciliation, and recurring reports.",
     href: "/projects/invoice-report-automation",
+    repository: "https://github.com/rongali-commits/invoice-report-automation",
     challenge:
       "Manual spreadsheet cleanup is slow, inconsistent, and easy to break when the source file changes.",
     solution:
@@ -91,6 +94,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Useful for agencies, recruiters, real estate teams, and small sales teams that need cleaner prospect lists.",
     href: "/projects/lead-intelligence-dashboard",
+    repository: "https://github.com/rongali-commits/lead-intelligence-pipeline",
     challenge:
       "Sales teams often collect leads manually from public sources, then spend more time cleaning duplicates than contacting prospects.",
     solution:

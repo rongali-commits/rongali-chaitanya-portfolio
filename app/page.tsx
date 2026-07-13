@@ -221,35 +221,43 @@ export default function Home() {
         </div>
         <div className="project-grid">
           {internalProjects.map((project) => (
-            <a
-              className="project-card"
-              href={project.href}
-              key={project.title}
-              rel={project.external ? "noreferrer" : undefined}
-              target={project.external ? "_blank" : undefined}
-            >
-              <p className="project-label">{project.label}</p>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <div className="project-details">
-                <div>
-                  <span>Interactive demo</span>
-                  <strong>{project.demoStack}</strong>
+            <article className="project-card" key={project.title}>
+              <a className="project-card-content" href={project.href}>
+                <p className="project-label">{project.label}</p>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <div className="project-details">
+                  <div>
+                    <span>Interactive demo</span>
+                    <strong>{project.demoStack}</strong>
+                  </div>
+                  <div>
+                    <span>Production blueprint</span>
+                    <strong>{project.stack}</strong>
+                  </div>
                 </div>
-                <div>
-                  <span>Production blueprint</span>
-                  <strong>{project.stack}</strong>
-                </div>
+                <ul>
+                  {project.deliverables.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </a>
+              <div className="project-card-actions">
+                <a className="project-cta" href={project.href}>
+                  Open interactive prototype
+                </a>
+                {project.repository && (
+                  <a
+                    className="project-source"
+                    href={project.repository}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    View source <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </div>
-              <ul>
-                {project.deliverables.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <span className="project-cta">
-                {project.external ? "Open live website" : "Open interactive prototype"}
-              </span>
-            </a>
+            </article>
           ))}
         </div>
       </section>
