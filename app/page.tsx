@@ -48,7 +48,7 @@ const engagements = [
 
 const stats = [
   ["5+", "years in IT and practical software work"],
-  ["5", "interactive product prototypes"],
+  ["5", "independently deployed live products"],
   ["3", "focused ways to hire me"],
   ["1", "independent publishing project"],
 ];
@@ -161,12 +161,12 @@ export default function Home() {
               Discuss a project
             </a>
             <a className="button secondary" href="#projects">
-              View project prototypes
+              Open live projects
             </a>
           </div>
           <div className="proof-row" aria-label="Portfolio proof points">
-            <span>Interactive browser prototypes</span>
-            <span>GitHub + Vercel workflow</span>
+            <span>5 independently hosted applications</span>
+            <span>Public source + automated checks</span>
             <span>Clear, handover-focused delivery</span>
           </div>
         </div>
@@ -211,12 +211,12 @@ export default function Home() {
       <section className="section projects" id="projects">
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
-          <h2>Interactive workflows you can open and test.</h2>
+          <h2>Five standalone products you can open, test, and inspect.</h2>
           <p>
-            Each page is a transparent browser prototype using safe sample
-            data. It demonstrates the workflow and interface; the production
-            blueprint shows how I would connect real Python, AI, APIs, and
-            business data.
+            Every project has its own live application and public repository.
+            The running browser implementation, tested backend code, and
+            production extension are labelled separately so you can verify
+            exactly what exists today.
           </p>
         </div>
         <div className="project-grid">
@@ -228,11 +228,11 @@ export default function Home() {
                 <p>{project.summary}</p>
                 <div className="project-details">
                   <div>
-                    <span>Interactive demo</span>
+                    <span>Implemented and live</span>
                     <strong>{project.demoStack}</strong>
                   </div>
                   <div>
-                    <span>Production blueprint</span>
+                    <span>Production extension</span>
                     <strong>{project.stack}</strong>
                   </div>
                 </div>
@@ -243,8 +243,18 @@ export default function Home() {
                 </ul>
               </a>
               <div className="project-card-actions">
-                <a className="project-cta" href={project.href}>
-                  Open interactive prototype
+                {project.liveUrl && (
+                  <a
+                    className="project-cta"
+                    href={project.liveUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Open live app <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+                <a className="project-source" href={project.href}>
+                  Case study
                 </a>
                 {project.repository && (
                   <a

@@ -27,14 +27,14 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} Interactive Prototype`,
-    description: `Explore a transparent browser prototype of ${project.title}, including the workflow and production implementation blueprint.`,
+    title: `${project.title} Live Demo & Implementation`,
+    description: `Open the standalone application for ${project.title}, inspect its implementation, and review the production extension.`,
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} Interactive Prototype`,
-      description: `Explore the workflow, safe sample data, and production blueprint for ${project.title}.`,
+      title: `${project.title} Live Demo & Implementation`,
+      description: `Explore the live workflow, public source, and production extension for ${project.title}.`,
       url: `/projects/${project.slug}`,
       type: "website",
     },
@@ -52,7 +52,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className={`solo-site solo-${project.slug}`} id="project-main">
       <a className="skip-link" href="#project-demo">
-        Skip to interactive prototype
+        Skip to embedded workflow preview
       </a>
       <nav className="solo-nav" aria-label={`${project.title} navigation`}>
         <Link className="brand" href="/" aria-label="Back to Rongali Chaitanya home">
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="solo-hero">
         <aside className="solo-brief">
-          <p className="eyebrow">Interactive browser prototype</p>
+          <p className="eyebrow">Live product + implementation case study</p>
           <h1>{project.title}</h1>
           <p>{project.summary}</p>
           <div className="solo-metrics">
@@ -80,9 +80,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <a className="button primary" href="mailto:hello@rongalichaitanya.com">
               Build this for me
             </a>
-            <Link className="button secondary" href="/">
-              Portfolio
-            </Link>
+            {project.liveUrl && (
+              <a
+                className="button secondary"
+                href={project.liveUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Open standalone app ↗
+              </a>
+            )}
             {project.repository && (
               <a
                 className="button secondary"
@@ -93,17 +100,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 View source ↗
               </a>
             )}
+            <Link className="button secondary" href="/">
+              Portfolio
+            </Link>
           </div>
         </aside>
 
         <section
           className="solo-app-shell"
           id="project-demo"
-          aria-label={`${project.title} interactive prototype`}
+          aria-label={`${project.title} embedded workflow preview`}
         >
           <div className="solo-app-toolbar">
             <div>
-              <span>Prototype</span>
+              <span>Embedded preview</span>
               <strong>Interactive workflow with safe sample data</strong>
             </div>
             <em>No external API calls</em>
@@ -114,8 +124,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="solo-section">
         <div className="solo-section-heading">
-          <p className="eyebrow">What this prototype demonstrates</p>
-          <h2>A focused workflow, shown honestly from input to output.</h2>
+          <p className="eyebrow">What is implemented</p>
+          <h2>A focused workflow, public source, and a clear production path.</h2>
         </div>
         <div className="solo-proof-grid">
           <article>
@@ -123,11 +133,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p>{project.challenge}</p>
           </article>
           <article>
-            <span>Prototype implementation</span>
+            <span>Live implementation</span>
             <p>{project.demoStack}</p>
           </article>
           <article>
-            <span>Production blueprint</span>
+            <span>Production extension</span>
             <p>{project.stack}</p>
           </article>
         </div>
