@@ -8,6 +8,7 @@ export type ProjectShowcase = {
   deliverables: string[];
   outcome: string;
   href: string;
+  liveUrl?: string;
   repository?: string;
   external?: boolean;
   challenge?: string;
@@ -20,12 +21,12 @@ export type ProjectShowcase = {
 export const projectShowcases: ProjectShowcase[] = [
   {
     slug: "ai-support-chatbot",
-    title: "AI Customer Support & Lead Assistant",
+    title: "Relay — Support & Lead Assistant",
     label: "AI integration",
     summary:
       "A website assistant that answers questions from FAQs, documents, and service pages while collecting visitor details for follow-up.",
-    demoStack: "Next.js, React, TypeScript, rule-based intent routing",
-    stack: "OpenAI API, embeddings, RAG, FastAPI, React",
+    demoStack: "JavaScript retrieval + tested FastAPI API",
+    stack: "FastAPI, embeddings, RAG, CRM integration",
     deliverables: [
       "Knowledge-base ingestion for FAQs, PDFs, and website content",
       "Lead capture flow with email-ready customer summaries",
@@ -34,6 +35,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Ideal for service businesses that want fewer repeated replies and better qualified website enquiries.",
     href: "/projects/ai-support-chatbot",
+    liveUrl: "https://rongali-commits.github.io/support-lead-assistant/",
     repository: "https://github.com/rongali-commits/support-lead-assistant",
     challenge:
       "Small businesses answer the same customer questions every day, but most visitors still leave before contacting the team.",
@@ -50,12 +52,12 @@ export const projectShowcases: ProjectShowcase[] = [
   },
   {
     slug: "invoice-report-automation",
-    title: "Automated Invoice & Report System",
+    title: "LedgerFlow — Invoice & Report Automation",
     label: "Python automation",
     summary:
       "A repeatable workflow that turns raw Excel or CSV files into clean reports, invoice PDFs, and email-ready summaries.",
-    demoStack: "Next.js, React, TypeScript, in-browser CSV parsing",
-    stack: "Python, Pandas, OpenPyXL, PDF generation, email APIs",
+    demoStack: "Browser CSV workflow + tested Python PDF pipeline",
+    stack: "Python, Pandas, Excel/PDF templates, email APIs",
     deliverables: [
       "CSV and Excel cleanup with validation rules",
       "PDF invoice or report generation",
@@ -64,6 +66,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Built for teams spending hours every week on spreadsheet formatting, reconciliation, and recurring reports.",
     href: "/projects/invoice-report-automation",
+    liveUrl: "https://rongali-commits.github.io/invoice-report-automation/",
     repository: "https://github.com/rongali-commits/invoice-report-automation",
     challenge:
       "Manual spreadsheet cleanup is slow, inconsistent, and easy to break when the source file changes.",
@@ -80,11 +83,11 @@ export const projectShowcases: ProjectShowcase[] = [
   },
   {
     slug: "lead-intelligence-dashboard",
-    title: "Lead Intelligence Scraper Dashboard",
+    title: "ProspectLab — Lead Intelligence Pipeline",
     label: "Data workflow",
     summary:
       "A web dashboard for collecting public business data, removing duplicates, cleaning records, and exporting qualified leads.",
-    demoStack: "Next.js, React, TypeScript, safe sample lead data",
+    demoStack: "JavaScript dashboard + tested Python data pipeline",
     stack: "Python, Playwright, BeautifulSoup, Google Sheets API",
     deliverables: [
       "Public data extraction with responsible rate limits",
@@ -94,6 +97,7 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Useful for agencies, recruiters, real estate teams, and small sales teams that need cleaner prospect lists.",
     href: "/projects/lead-intelligence-dashboard",
+    liveUrl: "https://rongali-commits.github.io/lead-intelligence-pipeline/",
     repository: "https://github.com/rongali-commits/lead-intelligence-pipeline",
     challenge:
       "Sales teams often collect leads manually from public sources, then spend more time cleaning duplicates than contacting prospects.",
@@ -110,12 +114,12 @@ export const projectShowcases: ProjectShowcase[] = [
   },
   {
     slug: "document-resume-analyzer",
-    title: "Document Intelligence & Resume Analyzer",
-    label: "AI workflow",
+    title: "Proofread — Document Review Workbench",
+    label: "Document workflow",
     summary:
-      "An AI-powered review tool that extracts key details from PDFs, resumes, and documents, then summarizes or ranks them against custom criteria.",
-    demoStack: "Next.js, React, TypeScript, sample scoring workflow",
-    stack: "Python, PDF parsing, OpenAI API, structured outputs",
+      "A transparent review workspace that matches documents against custom criteria, shows evidence, and exports a structured result.",
+    demoStack: "JavaScript, local text analysis, evidence + JSON export",
+    stack: "FastAPI, PDF/DOCX parsing, structured AI outputs",
     deliverables: [
       "Document upload and text extraction pipeline",
       "Custom scoring, tagging, and summary logic",
@@ -124,12 +128,14 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Designed for recruiters, admins, and operations teams that need to review large batches of documents faster.",
     href: "/projects/document-resume-analyzer",
+    liveUrl: "https://rongali-commits.github.io/document-review-workbench/",
+    repository: "https://github.com/rongali-commits/document-review-workbench",
     challenge:
       "Teams lose time opening every PDF, copying details, and trying to compare documents with inconsistent formats.",
     solution:
       "A document analyzer that extracts structured fields, summarizes each file, and ranks items against custom rules.",
-    metrics: ["Structured extraction", "Custom scoring", "Batch review"],
-    workflow: ["Upload PDFs", "Extract fields", "Score criteria", "Export summary"],
+    metrics: ["Evidence shown", "Custom criteria", "Local processing"],
+    workflow: ["Add text", "Set criteria", "Inspect evidence", "Export review"],
     features: [
       "Resume and PDF parsing",
       "Skill and keyword extraction",
@@ -139,12 +145,12 @@ export const projectShowcases: ProjectShowcase[] = [
   },
   {
     slug: "ai-content-workspace",
-    title: "AI Content Repurposing Workspace",
+    title: "SourceRoom — Content Repurposing Workspace",
     label: "Creator tooling",
     summary:
       "A tool that turns long-form notes, articles, or transcripts into platform-ready posts, summaries, email drafts, and idea banks.",
-    demoStack: "Next.js, React, TypeScript, browser-based text transforms",
-    stack: "Next.js, OpenAI API, prompt workflows, local storage",
+    demoStack: "JavaScript, local editorial transforms, copy workflow",
+    stack: "Next.js, model API, brand prompts, review + publishing",
     deliverables: [
       "Input workspace for transcript, blog, or notes",
       "Reusable prompt templates for different content formats",
@@ -153,6 +159,8 @@ export const projectShowcases: ProjectShowcase[] = [
     outcome:
       "Built for coaches, creators, agencies, and founders who want to publish more from one strong source asset.",
     href: "/projects/ai-content-workspace",
+    liveUrl: "https://rongali-commits.github.io/content-repurposing-workspace/",
+    repository: "https://github.com/rongali-commits/content-repurposing-workspace",
     challenge:
       "Creators and agencies often have strong raw material, but turning it into multiple useful formats takes too long.",
     solution:
