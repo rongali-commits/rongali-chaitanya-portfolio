@@ -3,6 +3,7 @@ export type ProjectShowcase = {
   title: string;
   label: string;
   summary: string;
+  demoStack?: string;
   stack: string;
   deliverables: string[];
   outcome: string;
@@ -22,6 +23,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "AI integration",
     summary:
       "A website assistant that answers questions from FAQs, documents, and service pages while collecting visitor details for follow-up.",
+    demoStack: "Next.js, React, TypeScript, rule-based intent routing",
     stack: "OpenAI API, embeddings, RAG, FastAPI, React",
     deliverables: [
       "Knowledge-base ingestion for FAQs, PDFs, and website content",
@@ -50,6 +52,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "Python automation",
     summary:
       "A repeatable workflow that turns raw Excel or CSV files into clean reports, invoice PDFs, and email-ready summaries.",
+    demoStack: "Next.js, React, TypeScript, in-browser CSV parsing",
     stack: "Python, Pandas, OpenPyXL, PDF generation, email APIs",
     deliverables: [
       "CSV and Excel cleanup with validation rules",
@@ -78,6 +81,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "Data workflow",
     summary:
       "A web dashboard for collecting public business data, removing duplicates, cleaning records, and exporting qualified leads.",
+    demoStack: "Next.js, React, TypeScript, safe sample lead data",
     stack: "Python, Playwright, BeautifulSoup, Google Sheets API",
     deliverables: [
       "Public data extraction with responsible rate limits",
@@ -106,6 +110,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "AI workflow",
     summary:
       "An AI-powered review tool that extracts key details from PDFs, resumes, and documents, then summarizes or ranks them against custom criteria.",
+    demoStack: "Next.js, React, TypeScript, sample scoring workflow",
     stack: "Python, PDF parsing, OpenAI API, structured outputs",
     deliverables: [
       "Document upload and text extraction pipeline",
@@ -134,6 +139,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "Creator tooling",
     summary:
       "A tool that turns long-form notes, articles, or transcripts into platform-ready posts, summaries, email drafts, and idea banks.",
+    demoStack: "Next.js, React, TypeScript, browser-based text transforms",
     stack: "Next.js, OpenAI API, prompt workflows, local storage",
     deliverables: [
       "Input workspace for transcript, blog, or notes",
@@ -162,6 +168,7 @@ export const projectShowcases: ProjectShowcase[] = [
     label: "Passion project",
     summary:
       "An independent publication for essays on history, science, philosophy, geopolitics, and the hidden forces shaping ordinary life.",
+    demoStack: "Next.js, TypeScript, MDX, Vercel",
     stack: "Editorial strategy, web publishing, research workflow, design",
     deliverables: [
       "Essay-led publishing system and topic structure",

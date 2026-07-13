@@ -42,6 +42,22 @@ main {
   min-height: 100vh;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 900;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-nav {
   position: sticky;
   top: 0;
@@ -698,6 +714,31 @@ li {
   outline: none;
 }
 
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(1180px, calc(100% - 2rem));
+  margin: -1rem auto 0;
+  border: 1px solid rgba(18, 22, 21, 0.14);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.trust-strip span {
+  display: grid;
+  min-height: 4.2rem;
+  place-items: center;
+  padding: 0.9rem;
+  border-right: 1px solid rgba(18, 22, 21, 0.1);
+  color: #33413b;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.trust-strip span:last-child {
+  border-right: 0;
+}
+
 .portfolio-agent {
   position: fixed;
   right: 1rem;
@@ -1282,6 +1323,7 @@ li {
 
 .live-results th,
 .live-results td,
+.invoice-preview th,
 .invoice-preview td {
   padding: 0.85rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -1858,6 +1900,18 @@ li {
   .contact-actions {
     justify-content: flex-start;
   }
+
+  .trust-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-strip span:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trust-strip span:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(18, 22, 21, 0.1);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1943,8 +1997,24 @@ li {
   }
 
   .proof-row span,
-  .contact-notes li {
+  .contact-notes li,
+  .trust-strip span {
     width: 100%;
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr;
+    width: min(100% - 1.25rem, 1180px);
+  }
+
+  .trust-strip span,
+  .trust-strip span:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(18, 22, 21, 0.1);
+  }
+
+  .trust-strip span:last-child {
+    border-bottom: 0;
   }
 
   .portfolio-agent {
@@ -1965,5 +2035,23 @@ li {
 
   .agent-message {
     max-width: 100%;
+  }
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid var(--teal) !important;
+  outline-offset: 3px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

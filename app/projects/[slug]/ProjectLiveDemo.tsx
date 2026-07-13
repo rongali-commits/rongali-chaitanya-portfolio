@@ -109,12 +109,12 @@ function ChatbotDemo() {
         <strong>Service FAQ, pricing notes, document automation scope, contact policy</strong>
         <div className="demo-stat-grid">
           <div>
-            <strong>92</strong>
-            <span>approved answers</span>
+            <strong>4</strong>
+            <span>guided intent routes</span>
           </div>
           <div>
-            <strong>14</strong>
-            <span>lead questions</span>
+            <strong>0</strong>
+            <span>external API calls</span>
           </div>
         </div>
         <button className="mini-button" type="button" onClick={() => setInput("What does this cost?")}>
@@ -198,6 +198,13 @@ function InvoiceDemo() {
               rows, and flagged {errors.length} row for review.
             </p>
             <table>
+              <thead>
+                <tr>
+                  <th scope="col">Client</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
               <tbody>
                 {cleanRows.slice(0, 3).map((row) => (
                   <tr key={`${row.client}-${row.service}`}>

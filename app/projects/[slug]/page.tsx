@@ -27,8 +27,17 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} Live Demo | Rongali Chaitanya`,
-    description: `Try the live ${project.title} demo by Rongali Chaitanya.`,
+    title: `${project.title} Interactive Prototype`,
+    description: `Explore a transparent browser prototype of ${project.title}, including the workflow and production implementation blueprint.`,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} Interactive Prototype`,
+      description: `Explore the workflow, safe sample data, and production blueprint for ${project.title}.`,
+      url: `/projects/${project.slug}`,
+      type: "website",
+    },
   };
 }
 
@@ -41,7 +50,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className={`solo-site solo-${project.slug}`}>
+    <main className={`solo-site solo-${project.slug}`} id="project-main">
+      <a className="skip-link" href="#project-demo">
+        Skip to interactive prototype
+      </a>
       <nav className="solo-nav" aria-label={`${project.title} navigation`}>
         <Link className="brand" href="/" aria-label="Back to Rongali Chaitanya home">
           RC
@@ -58,7 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="solo-hero">
         <aside className="solo-brief">
-          <p className="eyebrow">Live product demo</p>
+          <p className="eyebrow">Interactive browser prototype</p>
           <h1>{project.title}</h1>
           <p>{project.summary}</p>
           <div className="solo-metrics">
@@ -74,13 +86,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </aside>
 
-        <section className="solo-app-shell" aria-label={`${project.title} live app`}>
+        <section
+          className="solo-app-shell"
+          id="project-demo"
+          aria-label={`${project.title} interactive prototype`}
+        >
           <div className="solo-app-toolbar">
             <div>
-              <span>Live app</span>
-              <strong>Interactive sample workflow</strong>
+              <span>Prototype</span>
+              <strong>Interactive workflow with safe sample data</strong>
             </div>
-            <em>Runs in browser</em>
+            <em>No external API calls</em>
           </div>
           <ProjectLiveDemo slug={project.slug} />
         </section>
@@ -88,8 +104,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="solo-section">
         <div className="solo-section-heading">
-          <p className="eyebrow">What this app proves</p>
-          <h2>A complete client-ready workflow, packaged as a focused product.</h2>
+          <p className="eyebrow">What this prototype demonstrates</p>
+          <h2>A focused workflow, shown honestly from input to output.</h2>
         </div>
         <div className="solo-proof-grid">
           <article>
@@ -97,11 +113,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p>{project.challenge}</p>
           </article>
           <article>
-            <span>Solution</span>
-            <p>{project.solution}</p>
+            <span>Prototype implementation</span>
+            <p>{project.demoStack}</p>
           </article>
           <article>
-            <span>Stack</span>
+            <span>Production blueprint</span>
             <p>{project.stack}</p>
           </article>
         </div>
@@ -110,7 +126,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="solo-section solo-workflow">
         <div>
           <p className="eyebrow">Workflow</p>
-          <h2>How the real client version would work.</h2>
+          <h2>How a production client version would work.</h2>
         </div>
         <ol>
           {project.workflow?.map((step, index) => (
@@ -129,7 +145,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p>
             This public demo uses safe sample data. A production version can be
             connected to your documents, spreadsheet, website, CRM, email, or
-            OpenAI API workflow.
+            AI API workflow, with validation, access controls, and deployment
+            matched to your requirements.
           </p>
         </div>
         <a className="button primary" href="mailto:hello@rongalichaitanya.com">
