@@ -486,11 +486,17 @@ li {
 }
 
 .project-card:hover,
-.project-card:focus-visible {
+.project-card:focus-within {
   border-color: rgba(15, 118, 110, 0.45);
   box-shadow: var(--shadow);
   transform: translateY(-3px);
-  outline: none;
+}
+
+.project-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: inherit;
 }
 
 .project-label {
@@ -528,6 +534,13 @@ li {
   margin-top: auto;
 }
 
+.project-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.1rem;
+}
+
 .project-cta {
   display: inline-flex;
   width: fit-content;
@@ -537,6 +550,19 @@ li {
   border-bottom: 2px solid var(--teal);
   color: var(--teal);
   font-weight: 900;
+}
+
+.project-source {
+  display: inline-flex;
+  min-height: 2.55rem;
+  align-items: center;
+  gap: 0.28rem;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.project-source:hover {
+  color: var(--teal);
 }
 
 .engagements {
