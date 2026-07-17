@@ -107,8 +107,11 @@ const structuredData = {
     name: "Rongali Chaitanya",
     url: "https://www.rongalichaitanya.com",
     description:
-      "Python automation and AI integration developer building practical business tools.",
-    jobTitle: "Python Automation & AI Integration Developer",
+      "Python automation and AI integration developer, writer, and creator of the independent publication Noerong.",
+    jobTitle: [
+      "Python Automation & AI Integration Developer",
+      "Writer and Creator of Noerong",
+    ],
     knowsAbout: [
       "Python automation",
       "FastAPI",
@@ -383,8 +386,8 @@ export default function Home() {
 
       <section className="section noerong" id="noerong">
         <div>
-          <p className="eyebrow">Passion project</p>
-          <h2>Noerong is my independent publishing project.</h2>
+          <p className="eyebrow">Writing and publishing</p>
+          <h2>Creator and writer at Noerong.com.</h2>
         </div>
         <div className="noerong-panel">
           <p>
@@ -399,7 +402,7 @@ export default function Home() {
             into something clear enough for other people to use.
           </p>
           <a className="text-link" href="https://noerong.com" target="_blank" rel="noreferrer">
-            Visit noerong.com
+            Read Noerong.com
           </a>
         </div>
       </section>
