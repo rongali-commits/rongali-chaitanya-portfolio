@@ -102,10 +102,15 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "@id": "https://www.rongalichaitanya.com/#profile-page",
+  url: "https://www.rongalichaitanya.com",
+  dateModified: "2026-07-18",
   mainEntity: {
     "@type": "Person",
+    "@id": "https://www.rongalichaitanya.com/#rongali-chaitanya",
     name: "Rongali Chaitanya",
     url: "https://www.rongalichaitanya.com",
+    mainEntityOfPage: "https://www.rongalichaitanya.com",
     description:
       "Python automation and AI integration developer, writer, and creator of the independent publication Noerong.",
     jobTitle: [
@@ -120,7 +125,11 @@ const structuredData = {
       "Next.js",
       "Business workflow automation",
     ],
-    sameAs: ["https://github.com/rongali-commits", "https://noerong.com"],
+    sameAs: [
+      "https://github.com/rongali-commits",
+      "https://www.linkedin.com/in/rongali-chaitanya-29b4772a2",
+      "https://noerong.com/about",
+    ],
   },
 };
 
@@ -152,7 +161,7 @@ export default function Home() {
       <section className="hero section" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Python automation / practical AI / web tools</p>
-          <h1>I automate reporting, document work, and repetitive operations.</h1>
+          <h1>Rongali Chaitanya builds practical automation and AI tools.</h1>
           <p className="hero-text">
             I build Python automations, practical AI assistants, and focused
             dashboards for agencies, founders, and operations teams. Every
@@ -401,7 +410,7 @@ export default function Home() {
             connect ideas across domains, test assumptions, and turn complexity
             into something clear enough for other people to use.
           </p>
-          <a className="text-link" href="https://noerong.com" target="_blank" rel="noreferrer">
+          <a className="text-link" href="https://noerong.com" target="_blank" rel="me noreferrer">
             Read Noerong.com
           </a>
         </div>
@@ -454,7 +463,10 @@ export default function Home() {
         <a href="https://github.com/rongali-commits" target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <a href="https://noerong.com" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/rongali-chaitanya-29b4772a2" target="_blank" rel="me noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://noerong.com" target="_blank" rel="me noreferrer">
           Noerong
         </a>
       </footer>
