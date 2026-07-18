@@ -127,7 +127,7 @@ const structuredData = {
     ],
     sameAs: [
       "https://github.com/rongali-commits",
-      "https://www.linkedin.com/in/rongali-chaitanya-29b4772a2",
+      "https://www.linkedin.com/in/rongali-chaitanya-ba5746317",
       "https://noerong.com/about",
     ],
   },
@@ -463,7 +463,7 @@ export default function Home() {
         <a href="https://github.com/rongali-commits" target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/rongali-chaitanya-29b4772a2" target="_blank" rel="me noreferrer">
+        <a href="https://www.linkedin.com/in/rongali-chaitanya-ba5746317" target="_blank" rel="me noreferrer">
           LinkedIn
         </a>
         <a href="https://noerong.com" target="_blank" rel="me noreferrer">
