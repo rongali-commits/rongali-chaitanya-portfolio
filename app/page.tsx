@@ -104,7 +104,7 @@ const structuredData = {
   "@type": "ProfilePage",
   "@id": "https://www.rongalichaitanya.com/#profile-page",
   url: "https://www.rongalichaitanya.com",
-  dateModified: "2026-07-20",
+  dateModified: "2026-07-20T18:35:22+05:30",
   mainEntity: {
     "@type": "Person",
     "@id": "https://www.rongalichaitanya.com/#rongali-chaitanya",
