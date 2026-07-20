@@ -104,7 +104,7 @@ const structuredData = {
   "@type": "ProfilePage",
   "@id": "https://www.rongalichaitanya.com/#profile-page",
   url: "https://www.rongalichaitanya.com",
-  dateModified: "2026-07-18",
+  dateModified: "2026-07-20",
   mainEntity: {
     "@type": "Person",
     "@id": "https://www.rongalichaitanya.com/#rongali-chaitanya",
@@ -130,6 +130,13 @@ const structuredData = {
       "https://www.linkedin.com/in/rongalichaitanya",
       "https://noerong.com/about",
     ],
+    subjectOf: {
+      "@type": "WebSite",
+      "@id": "https://noerong.com/#website",
+      name: "Noerong",
+      url: "https://noerong.com",
+      creator: { "@id": "https://www.rongalichaitanya.com/#rongali-chaitanya" },
+    },
   },
 };
 
