@@ -1,10 +1,11 @@
 # Rongali Chaitanya Portfolio
 
-Production portfolio for [rongalichaitanya.com](https://www.rongalichaitanya.com), focused on Python automation, practical AI integration, and business workflow tools.
+Production portfolio for [rongalichaitanya.com](https://www.rongalichaitanya.com), presenting two professional tracks: research-based writing and Python automation/practical AI.
 
 ## What the site includes
 
-- Client-focused service positioning and engagement packages
+- Client-focused writing and automation positioning with engagement packages
+- Research-writing samples published through Noerong
 - Five interactive browser prototypes using safe sample data
 - Transparent separation between each prototype implementation and its production architecture
 - Project finder for routing visitors to the most relevant workflow
