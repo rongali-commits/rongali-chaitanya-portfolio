@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rongali Chaitanya — Python Automation & AI Integration",
+    name: "Rongali Chaitanya — Research Writing & Python Automation",
     short_name: "Rongali Chaitanya",
     description:
-      "Python automation, practical AI integration, and focused web tools for business workflows.",
+      "Research-based writing, Python automation, practical AI workflows, and focused web tools.",
     start_url: "/",
     display: "standalone",
     background_color: "#f6f7f3",

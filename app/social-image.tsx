@@ -28,7 +28,7 @@ export function createSocialImage() {
           }}
         >
           <div style={{ color: "#0f766e", display: "flex", fontSize: 24, fontWeight: 700 }}>
-            PYTHON AUTOMATION / PRACTICAL AI / WEB TOOLS
+            RESEARCH WRITING / PYTHON AUTOMATION / PRACTICAL AI
           </div>
           <div
             style={{
@@ -41,7 +41,7 @@ export function createSocialImage() {
               maxWidth: 940,
             }}
           >
-            Automating reporting, document work, and repetitive operations.
+            Researching complex subjects. Automating repetitive work.
           </div>
           <div
             style={{

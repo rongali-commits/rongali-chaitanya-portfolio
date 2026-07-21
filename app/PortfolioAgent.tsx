@@ -19,25 +19,25 @@ type AgentMessage = {
 };
 
 const quickPrompts = [
-  "What can Chaitanya build for me?",
+  "What can Chaitanya research or write?",
+  "What can Chaitanya automate?",
   "Which project matches my task?",
-  "Tell me about the AI chatbot demo",
   "I have messy spreadsheet reports",
   "What is Noerong?",
   "How do I hire him?",
 ];
 
 const ownerSummary =
-  "Rongali Chaitanya is an IT professional with 5 years of experience building practical AI integrations, Python automations, and web tools. He works best on real business workflows: repeated reports, document review, customer questions, lead collection, dashboards, and lightweight tools that need to be shipped clearly.";
+  "Rongali Chaitanya is an independent research writer and Python automation developer. He creates source-backed long-form content across complex subjects and builds practical software for repeated reports, document work, data collection, AI-assisted workflows, and focused web tools.";
 
 const skillSummary =
-  "His core stack is Python, FastAPI, Pandas, Playwright, OpenAI API, RAG, embeddings, prompt workflows, Next.js, React, TypeScript, REST APIs, Google Sheets API, GitHub, and Vercel.";
+  "His writing capabilities include deep research, source synthesis, fact-checking, long-form articles, reports, explainers, white papers, and structural editing. His technical stack includes Python, FastAPI, Pandas, Playwright, APIs, RAG, Next.js, React, TypeScript, GitHub, and Vercel.";
 
 const hireSummary =
-  "The easiest way to start is to send the manual task, a sample file or data source, and the result you want. Typical project shapes are an Automation Sprint, an AI Assistant Build, or a Web Tool / Dashboard.";
+  "The easiest way to start is to send the question, content brief, or repeated workflow; the intended reader or user; the available sources or data; and the result you need. Typical projects are a Research Article or Report, an Automation Sprint, or a combined Research-to-Workflow System.";
 
 const noerongSummary =
-  "Noerong is Chaitanya's independent publishing project at noerong.com. It explores history, science, philosophy, geopolitics, and human life through curious, research-driven essays.";
+  "Noerong is Chaitanya's independent research publication at noerong.com. Its source-backed essays explore history, science, philosophy, geopolitics, and human life, demonstrating his ability to investigate difficult questions and make them readable without flattening the evidence.";
 
 let nextMessageId = 1;
 
@@ -120,7 +120,7 @@ function buildAgentReply(input: string): AgentMessage {
   if (!lowerInput) {
     return createMessage({
       role: "agent",
-      text: "Ask me about Chaitanya, his skills, project demos, Noerong, or what kind of automation you want to build.",
+      text: "Ask me about Chaitanya's research writing, automation work, project demos, Noerong, or how to start a freelance project.",
     });
   }
 
@@ -148,16 +148,17 @@ function buildAgentReply(input: string): AgentMessage {
       role: "agent",
       text: `${ownerSummary}\n\n${skillSummary}`,
       actions: [
-        { label: "View projects", href: "/#projects" },
+        { label: "View writing", href: "/#writing" },
+        { label: "View software", href: "/#automation" },
         { label: "Ask about hiring", prompt: "How do I hire Chaitanya?" },
       ],
     });
   }
 
-  if (includesAny(query, ["skill", "stack", "technology", "tools", "python", "react", "openai", "fastapi", "rag"])) {
+  if (includesAny(query, ["skill", "stack", "technology", "tools", "python", "react", "openai", "fastapi", "rag", "research", "writer", "writing", "article", "report", "white paper", "fact check"])) {
     return createMessage({
       role: "agent",
-      text: `${skillSummary}\n\nFor freelance work, the useful combinations are AI plus documents, Python plus messy data, and web UI plus deployment.`,
+      text: `${skillSummary}\n\nClients can hire either track independently. The combined advantage is especially useful for research-heavy explainers, knowledge systems, document workflows, and editorial tools.`,
       actions: [
         { label: "Show matching projects", prompt: "Which projects show these skills?" },
         { label: "Email Chaitanya", href: buildEmailLink(lowerInput) },
@@ -168,15 +169,15 @@ function buildAgentReply(input: string): AgentMessage {
   if (includesAny(query, ["hire", "contact", "email", "available", "timeline", "price", "cost", "quote", "start"])) {
     return createMessage({
       role: "agent",
-      text: `${hireSummary}\n\nFor pricing, Chaitanya should first see the workflow, data source, edge cases, and deadline. A focused automation can often start as a small sprint; larger AI assistants or dashboards need a tighter scope first.`,
+      text: `${hireSummary}\n\nPricing depends on research depth, length, workflow complexity, source access, edge cases, and deadline. A bounded brief makes a fixed-price quote possible.`,
       actions: [
         { label: "Email hello@rongalichaitanya.com", href: buildEmailLink(lowerInput) },
-        { label: "See project packages", href: "/#engagements" },
+        { label: "See engagement options", href: "/#engagements" },
       ],
     });
   }
 
-  if (includesAny(query, ["noerong", "passion", "publication", "writing", "essay", "blog"])) {
+  if (includesAny(query, ["noerong", "passion", "publication", "essay", "blog"])) {
     return createMessage({
       role: "agent",
       text: noerongSummary,
@@ -187,14 +188,14 @@ function buildAgentReply(input: string): AgentMessage {
     });
   }
 
-  if (includesAny(query, ["project", "demo", "portfolio", "example", "recommend", "match", "need", "build", "workflow", "automation", "dashboard", "assistant", "scraper", "document", "content", "spreadsheet", "report"])) {
+  if (includesAny(query, ["project", "demo", "portfolio", "example", "recommend", "match", "need", "build", "workflow", "automation", "dashboard", "assistant", "scraper", "document", "content", "spreadsheet"])) {
     const slugs = recommendedProjects(lowerInput);
     return createMessage({
       role: "agent",
       text: "Based on what you asked, these are the strongest matching live demos. Open one to see the product-style workflow, then email Chaitanya with your real data source and target output.",
       actions: [
         { label: "Email with this brief", href: buildEmailLink(lowerInput) },
-        { label: "View all projects", href: "/#projects" },
+        { label: "View software projects", href: "/#automation" },
       ],
       projectSlugs: slugs,
     });
@@ -202,7 +203,7 @@ function buildAgentReply(input: string): AgentMessage {
 
   return createMessage({
     role: "agent",
-    text: `I can help route that. ${ownerSummary}\n\nIf your problem involves repeated data work, customer questions, document review, lead collection, content repurposing, or a small web tool, Chaitanya likely has a matching project pattern.`,
+    text: `I can help route that. ${ownerSummary}\n\nIf you need a difficult subject researched and explained, a draft strengthened with better evidence, or a repeated data and document workflow automated, Chaitanya likely has a relevant approach.`,
     actions: [
       { label: "Recommend a demo", prompt: `Which demo matches this: ${lowerInput}` },
       { label: "Email Chaitanya", href: buildEmailLink(lowerInput) },
@@ -216,7 +217,7 @@ export function PortfolioAgent() {
   const [messages, setMessages] = useState<AgentMessage[]>(() => [
     createMessage({
       role: "agent",
-      text: "Hi, I am the RC Project Finder. Describe the task you want to improve and I will point you to the most relevant prototype or next step.",
+      text: "Hi, I am the RC Service Finder. Describe what you need researched, written, or automated, and I will point you to the most relevant evidence or next step.",
       actions: [
         { label: "Recommend a project", prompt: "Which project matches my task?" },
         { label: "How to hire", prompt: "How do I hire Chaitanya?" },
@@ -257,7 +258,7 @@ export function PortfolioAgent() {
           onClick={() => setIsOpen(true)}
           type="button"
         >
-          <span>Project Finder</span>
+          <span>Service Finder</span>
           <strong>Match your workflow</strong>
         </button>
       )}
@@ -270,7 +271,7 @@ export function PortfolioAgent() {
         >
           <div className="agent-header">
             <div>
-              <span>Project Finder</span>
+              <span>Service Finder</span>
               <strong>Portfolio workflow guide</strong>
             </div>
             <button aria-label="Close project finder" onClick={() => setIsOpen(false)} type="button">

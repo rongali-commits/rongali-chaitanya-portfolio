@@ -5,20 +5,20 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rongalichaitanya.com"),
   title: {
-    default: "Python Automation & AI Integration Developer | Rongali Chaitanya",
+    default: "Research Writer & Python Automation Developer | Rongali Chaitanya",
     template: "%s | Rongali Chaitanya",
   },
   description:
-    "Python automation, practical AI integration, and focused web tools for agencies, founders, and operations teams.",
+    "Research-based writing on complex subjects, plus Python automation, practical AI workflows, and focused web tools.",
   alternates: {
     canonical: "/",
   },
   authors: [{ name: "Rongali Chaitanya", url: "/" }],
   creator: "Rongali Chaitanya",
   openGraph: {
-    title: "Python Automation & AI Integration Developer | Rongali Chaitanya",
+    title: "Research Writer & Python Automation Developer | Rongali Chaitanya",
     description:
-      "Practical Python automation, AI assistants, and focused web tools with clear scope and documented handover.",
+      "Source-backed articles and reports, plus practical Python automation, AI workflows, and focused web tools.",
     url: "https://www.rongalichaitanya.com",
     siteName: "Rongali Chaitanya",
     locale: "en_IN",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Python Automation & AI Integration Developer | Rongali Chaitanya",
+    title: "Research Writer & Python Automation Developer | Rongali Chaitanya",
     description:
-      "Practical Python automation, AI assistants, and focused web tools with clear scope and documented handover.",
+      "Source-backed writing and practical automation, with transparent research and documented delivery.",
   },
   robots: {
     index: true,

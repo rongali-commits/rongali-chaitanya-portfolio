@@ -177,9 +177,9 @@ export const projectShowcases: ProjectShowcase[] = [
   {
     slug: "noerong-publishing-website",
     title: "Noerong Publishing Website",
-    label: "Passion project",
+    label: "Independent research publication",
     summary:
-      "An independent publication for essays on history, science, philosophy, geopolitics, and the hidden forces shaping ordinary life.",
+      "A source-backed publication for research essays on history, science, philosophy, geopolitics, and the hidden forces shaping ordinary life.",
     demoStack: "Next.js, TypeScript, MDX, Vercel",
     stack: "Editorial strategy, web publishing, research workflow, design",
     deliverables: [
@@ -188,7 +188,7 @@ export const projectShowcases: ProjectShowcase[] = [
       "Brand voice around curiosity, research, and intellectual exploration",
     ],
     outcome:
-      "Shows the research-driven side of my work: patient thinking, clear writing, and the habit of turning broad questions into useful structure.",
+      "Demonstrates deep research, cross-domain synthesis, fact-checking, narrative structure, and clear long-form writing.",
     href: "https://noerong.com",
     external: true,
   },
