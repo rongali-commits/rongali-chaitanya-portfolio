@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { PortfolioAgent } from "./PortfolioAgent";
 import "./globals.css";
+
+const googleAnalyticsId = "G-HGT7XR3K8L";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rongalichaitanya.com"),
@@ -50,6 +53,18 @@ export default function RootLayout({
       <body>
         {children}
         <PortfolioAgent />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
       </body>
     </html>
   );
