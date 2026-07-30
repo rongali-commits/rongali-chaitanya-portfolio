@@ -110,7 +110,7 @@ const writingSamples = [
     description:
       "A non-identity thought experiment about war, conception, and the fragile chain of events behind every human life.",
     proof: "Historical research, philosophical framing, careful counterfactual reasoning",
-    href: "https://noerong.com/essays/world-war-ii-and-the-people-who-almost-existed",
+    href: "https://noerong.com/essays/would-i-exist-without-world-war-ii",
   },
   {
     label: "Philosophy / science",
@@ -174,7 +174,7 @@ const structuredData = {
     sameAs: [
       "https://github.com/rongali-commits",
       "https://www.linkedin.com/in/rongalichaitanya",
-      "https://noerong.com/about",
+      "https://noerong.com/about/rongali-chaitanya",
     ],
     subjectOf: {
       "@type": "WebSite",
