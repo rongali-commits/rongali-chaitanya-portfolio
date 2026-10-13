@@ -1,6 +1,6 @@
 # Rongali Chaitanya Portfolio
 
-Production portfolio for [rongalichaitanya.com](https://www.rongalichaitanya.com), presenting two professional tracks: research-based writing and Python automation/practical AI.
+An earlier Next.js portfolio and workflow-prototype implementation. The current Noerong studio, products and case studies are at [noerong.com/projects](https://noerong.com/projects). This repository is retained as development history and does not represent the current live portfolio.
 
 ## What the site includes
 
