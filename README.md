@@ -37,7 +37,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+After the development server starts, open `http://localhost:3000` on your computer.
 
 ## Verification
 
@@ -60,4 +60,4 @@ pnpm build
 
 ## Deployment
 
-The production site is deployed through Vercel from GitHub. Use Vercel's detected Next.js settings and assign both the apex and `www` domains, with one configured as the canonical redirect target.
+This earlier implementation includes Vercel deployment configuration. Its former personal domain is no longer the current portfolio. Visit [Noerong](https://noerong.com) for the current studio and published work.
